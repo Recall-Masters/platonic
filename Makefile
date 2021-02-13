@@ -3,7 +3,7 @@ SHELL:=/usr/bin/env bash
 .PHONY: lint
 lint:
 	mypy platonic tests/**/*.py
-	flake8 .
+	flake8 platonic tests
 
 .PHONY: unit
 unit:
