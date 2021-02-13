@@ -3,8 +3,7 @@ SHELL:=/usr/bin/env bash
 .PHONY: lint
 lint:
 	mypy platonic tests/**/*.py
-	flake8 .
-	doc8 -q docs
+	flake8 platonic tests
 
 .PHONY: unit
 unit:
@@ -20,3 +19,8 @@ package:
 
 .PHONY: test
 test: lint package unit
+
+
+.PHONY: format
+format:
+	python makefile.py

@@ -5,10 +5,13 @@ from typing import Callable, Iterable
 from platonic.queue.base import BaseQueue
 from platonic.queue.message import Message
 from platonic.queue.types import InternalType, ValueType
+from platonic.types import Infinity, Timeout
 
 
 class Receiver(Iterable[Message[ValueType]], BaseQueue[ValueType]):
     """Queue to read stuff from."""
+
+    timeout: Timeout = Infinity.POSITIVE
 
     @cached_property
     def deserialize_value(self) -> Callable[[InternalType], ValueType]:
@@ -20,14 +23,13 @@ class Receiver(Iterable[Message[ValueType]], BaseQueue[ValueType]):
 
     @abstractmethod
     def receive(self) -> Message[ValueType]:
-        """Get next message from queue, without deleting it."""
-
-    @abstractmethod
-    def receive_with_timeout(self, timeout: int) -> Message[ValueType]:
         """
-        For the given period of time, wait for a new message from the queue.
+        For the given `timeout`, wait for a new message from the queue.
 
-        Return the message if received, otherwise throw a ReceiveTimeout error.
+        Return the message if received or raise a `ReceiveTimeout` error
+        otherwise.
+
+        The message is not deleted from the queue.
         """
 
     @abstractmethod
@@ -35,8 +37,17 @@ class Receiver(Iterable[Message[ValueType]], BaseQueue[ValueType]):
         """
         Indicate that the given message is correctly processed.
 
-        By semantics, is equivalent to `queue.Queue.task_done()`.
+        Remove it from the queue.
         """
+
+    def acknowledge_many(self, messages: Iterable[Message[ValueType]]) -> None:
+        """
+        Multiple messages are correctly processed.
+
+        Remove them from the queue.
+        """
+        for message in messages:
+            self.acknowledge(message)
 
     @abstractmethod
     def acknowledgement(self, message: Message[ValueType]):

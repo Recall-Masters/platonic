@@ -1,7 +1,6 @@
 import dataclasses
 
 from documented import DocumentedError
-
 from platonic.queue.base import BaseQueue
 from platonic.queue.receiver import Message, Receiver
 
