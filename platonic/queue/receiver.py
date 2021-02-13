@@ -5,10 +5,13 @@ from typing import Callable, Iterable
 from platonic.queue.base import BaseQueue
 from platonic.queue.message import Message
 from platonic.queue.types import InternalType, ValueType
+from platonic.types import INFINITY, Timeout
 
 
 class Receiver(Iterable[Message[ValueType]], BaseQueue[ValueType]):
     """Queue to read stuff from."""
+
+    timeout: Timeout = INFINITY
 
     @cached_property
     def deserialize_value(self) -> Callable[[InternalType], ValueType]:
