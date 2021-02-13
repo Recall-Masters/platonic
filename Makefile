@@ -19,3 +19,8 @@ package:
 
 .PHONY: test
 test: lint package unit
+
+
+.PHONY: format
+format:
+	python makefile.py

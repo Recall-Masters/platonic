@@ -2,10 +2,9 @@ from abc import ABC
 from functools import cached_property
 from typing import Generic, Type, TypeVar
 
-from typecasts import Typecasts
-
+from generic_args import generic_type_args
 from platonic.queue.types import InternalType
-from platonic.type_args import generic_type_args
+from typecasts import Typecasts
 
 ValueType = TypeVar('ValueType')
 

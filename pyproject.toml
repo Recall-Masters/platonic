@@ -3,10 +3,6 @@ requires = ["poetry>=1.0"]
 build-backend = "poetry.masonry.api"
 
 
-[tool.nitpick]
-style = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/nitpick-style-wemake.toml"
-
-
 [tool.poetry]
 name = "platonic"
 version = "1.1.1"
@@ -29,8 +25,8 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-typecasts = "^0.1.5"
+python = "^3.8,<3.10"
+typecasts = "^0.1.6"
 
 [tool.poetry.dev-dependencies]
 mypy = "0.800"
@@ -46,3 +42,7 @@ pytest-randomly = "^3.4"
 
 m2r = "^0.2"
 tomlkit = "^0.7"
+dependencies = "^6.0.0"
+
+[tool.flakehell]
+base = "https://raw.githubusercontent.com/Recall-Masters/standards/main/pyproject.toml"
