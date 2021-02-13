@@ -8,7 +8,7 @@ from abc import ABC
 from functools import cached_property
 from typing import Callable, Mapping, Type, TypeVar
 
-from platonic.type_args import generic_type_args
+from generic_args import generic_type_args
 from typecasts import Typecasts
 
 KeyType = TypeVar('KeyType')
