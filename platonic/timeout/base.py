@@ -1,5 +1,6 @@
 from abc import abstractmethod
 from contextlib import contextmanager
+from typing import Iterator
 
 
 class BaseTimer:
@@ -16,5 +17,5 @@ class BaseTimeout:
 
     @contextmanager
     @abstractmethod
-    def timer(self) -> BaseTimer:
+    def timer(self) -> Iterator[BaseTimer]:
         """Context manager returning a timer instance."""

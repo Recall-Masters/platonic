@@ -1,6 +1,6 @@
 import math
 from contextlib import contextmanager
-from typing import Iterable
+from typing import Iterator
 
 from platonic.timeout.base import BaseTimeout, BaseTimer
 
@@ -14,6 +14,6 @@ class InfiniteTimer(BaseTimer):
 
 class InfiniteTimeout(BaseTimeout):
     @contextmanager
-    def timer(self) -> Iterable[InfiniteTimer]:
+    def timer(self) -> Iterator[InfiniteTimer]:
         """Always yield infinite timeout."""
         yield InfiniteTimer()
