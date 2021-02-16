@@ -14,7 +14,8 @@ def test_constant_timeout():
         assert timer.remaining_seconds < 120
 
         time.sleep(1)
-        assert timer.remaining_seconds < 121
+        assert timer.remaining_seconds < 119
 
     assert timer.remaining_seconds > 0     # noqa: WPS441
-    assert timer.remaining_seconds < 121   # noqa: WPS441
+    assert timer.remaining_seconds < 119   # noqa: WPS441
+    assert timer.elapsed_seconds < 2
