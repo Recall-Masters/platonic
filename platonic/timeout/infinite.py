@@ -6,6 +6,8 @@ from platonic.timeout.base import BaseTimeout, BaseTimer
 
 
 class InfiniteTimer(BaseTimer):
+    """Wait forever."""
+
     @property
     def remaining_seconds(self) -> float:
         """The timeout is eternal."""
@@ -13,6 +15,8 @@ class InfiniteTimer(BaseTimer):
 
 
 class InfiniteTimeout(BaseTimeout):
+    """Wait forever."""
+
     @contextmanager
     def timer(self) -> Iterator[InfiniteTimer]:
         """Always yield infinite timeout."""

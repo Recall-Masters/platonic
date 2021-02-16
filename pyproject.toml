@@ -43,6 +43,7 @@ pytest-randomly = "^3.4"
 m2r = "^0.2"
 tomlkit = "^0.7"
 dependencies = "^6.0.0"
+flakehell = "^0.9.0"
 
 [tool.flakehell]
 base = "https://raw.githubusercontent.com/Recall-Masters/standards/main/pyproject.toml"
