@@ -5,7 +5,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "platonic"
-version = "1.1.0"
+version = "1.2.0"
 description = "Abstract datastructures for Clean Architecture applications in Python."
 license = "MIT"
 
