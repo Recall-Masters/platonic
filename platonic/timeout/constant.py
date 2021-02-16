@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from datetime import timedelta
 from typing import Iterator
 
-from platonic.timeout.base import BaseTimer, BaseTimeout
+from platonic.timeout.base import BaseTimeout, BaseTimer
 
 
 @dataclass
