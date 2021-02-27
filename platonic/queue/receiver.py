@@ -1,7 +1,7 @@
 from abc import abstractmethod
-from functools import cached_property
 from typing import Callable, Iterable
 
+from platonic.cached_property import cached_property
 from platonic.queue.base import BaseQueue
 from platonic.queue.message import Message
 from platonic.queue.types import InternalType, ValueType

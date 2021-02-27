@@ -32,7 +32,6 @@ tests_no_zope = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0
 [[package]]
 category = "main"
 description = "cached_property() - computed once per instance, cached as attribute"
-marker = "python_version < \"3.8\""
 name = "backports.cached-property"
 optional = false
 python-versions = ">=3.6.0"
@@ -901,7 +900,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-cov", "jaraco.test (>=3.2.0)", "jaraco.itertools", "func-timeout", "pytest-black (>=0.3.7)", "pytest-mypy"]
 
 [metadata]
-content-hash = "dabd8b40ee8fb66bb08f4c174863cef04d42deeed2a51bee841a377b878275ee"
+content-hash = "2d097fbd5e91897e0064ec2f279be4fa31db71a77a40258a630c3e07a45d84e6"
 python-versions = ">=3.7,<3.10"
 
 [metadata.files]
