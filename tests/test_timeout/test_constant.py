@@ -18,4 +18,4 @@ def test_constant_timeout():
 
     assert timer.remaining_seconds > 0     # noqa: WPS441
     assert timer.remaining_seconds < 119   # noqa: WPS441
-    assert timer.elapsed_seconds < 2
+    assert timer.elapsed_seconds < 2       # noqa: WPS441

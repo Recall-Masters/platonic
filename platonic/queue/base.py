@@ -1,8 +1,8 @@
 from abc import ABC
-from functools import cached_property
 from typing import Generic, Type, TypeVar
 
 from generic_args import generic_type_args
+from platonic.cached_property import cached_property
 from platonic.queue.types import InternalType
 from typecasts import Typecasts
 

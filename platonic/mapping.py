@@ -5,10 +5,10 @@ This module is a draft.
 """
 
 from abc import ABC
-from functools import cached_property
 from typing import Callable, Mapping, Type, TypeVar
 
 from generic_args import generic_type_args
+from platonic.cached_property import cached_property
 from typecasts import Typecasts
 
 KeyType = TypeVar('KeyType')

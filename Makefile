@@ -7,7 +7,10 @@ lint:
 
 .PHONY: unit
 unit:
+	# Pytest fails without this file
+	touch platonic/__init__.py
 	poetry run pytest
+	rm -f platonic/__init__.py
 
 .PHONY: package
 package:
@@ -20,4 +23,4 @@ test: lint package unit
 
 .PHONY: format
 format:
-	poetry run python makefile.py
+	poetry run jeeves format
