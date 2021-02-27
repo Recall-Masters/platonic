@@ -212,3 +212,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# We have nested packages and we have to not have this file in platonic folder
+platonic/__init__.py
