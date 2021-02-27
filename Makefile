@@ -23,5 +23,4 @@ test: lint package unit
 
 .PHONY: format
 format:
-	true
-	# poetry run jeeves format
+	poetry run jeeves format
